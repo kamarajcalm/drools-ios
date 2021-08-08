@@ -20,7 +20,7 @@ import FlashMessage, { showMessage, hideMessage } from "react-native-flash-messa
 import HttpsClient from '../HttpsClient';
 const screenHeight = Dimensions.get("screen").height
 import DropDownPicker from 'react-native-dropdown-picker';
-import { BluetoothManager, BluetoothEscposPrinter, BluetoothTscPrinter, } from 'react-native-bluetooth-escpos-printer';
+
 import moment from 'moment';
 const orderStatus = [
     {
@@ -50,50 +50,7 @@ class ViewInventoryOrders extends Component {
             quantity:""
         };
     }
-    print = async () => {
-       
-        await BluetoothEscposPrinter.printerAlign(BluetoothEscposPrinter.ALIGN.CENTER);
-        await BluetoothEscposPrinter.setBlob(0);
-        await BluetoothEscposPrinter.printText("Drools\n\r", {
-            encoding: 'GBK',
-            codepage: 0,
-            widthtimes: 3,
-            heigthtimes: 3,
-            fonttype: 1,
-        });
-        await BluetoothEscposPrinter.setBlob(0);
-        await BluetoothEscposPrinter.printText("# 109 , Ground floor , 5th main corner , 60 ft road , AGB layout, Hesaragatta road\n\r", {
-            encoding: 'GBK',
-            codepage: 0,
-            widthtimes: 0,
-            heigthtimes: 0,
-            fonttype: 1,
-        });
-        await BluetoothEscposPrinter.printText("Bangalore 560090\n\r", {});
-        await BluetoothEscposPrinter.printText("PHONE:8976979769\n\r", {});
-        await BluetoothEscposPrinter.printText("GSTIN:GDFTJLPHF3534\n\r", {});
-        await BluetoothEscposPrinter.printText("\n\r", {});
-        let columnWidths = [16, 16]
-        await BluetoothEscposPrinter.printColumn(columnWidths,
-            [BluetoothEscposPrinter.ALIGN.LEFT, BluetoothEscposPrinter.ALIGN.RIGHT],
-            [`ORDER NO:${this.state?.item?.id}`, `DATE:${moment(new Date()).format("DD/MM/YYYY")}`], { fonttype: 0 });
-        await BluetoothEscposPrinter.printText("\n\r", {});
-        await BluetoothEscposPrinter.printText("--------------------------------\n\r", {});
-        let columnWidts = [16, 16]
-        await BluetoothEscposPrinter.printColumn(columnWidts,
-            [BluetoothEscposPrinter.ALIGN.LEFT,  BluetoothEscposPrinter.ALIGN.RIGHT],
-            ["ITEM", 'QTY', ], {});
-        await BluetoothEscposPrinter.printText("--------------------------------\n\r", {});
-        this.state.item.items.forEach(async (i) => {
-            let columnWidth = [16,16]
-            await BluetoothEscposPrinter.printColumn(columnWidth,
-                [BluetoothEscposPrinter.ALIGN.LEFT,BluetoothEscposPrinter.ALIGN.RIGHT],
-                [`${i.itemTitle}`, `${i.quantity}`,], {});
-        })
-        await BluetoothEscposPrinter.printText("--------------------------------\n\r", {});
-        await BluetoothEscposPrinter.printText("\n\r", {});
-        await BluetoothEscposPrinter.printText("\n\r", {});
-    }
+
     getItem = async()=>{
         let api = `${url}/api/drools/orders/${this.state.item.id}/`
         let data = await HttpsClient.get(api)
@@ -347,13 +304,7 @@ class ViewInventoryOrders extends Component {
                      <Text style={[styles.text,{color:"#fff"}]}>Order Status : </Text>
                     <Text style={[styles.text, { color: this.validateColor() }]}>{this.state.item.order_status}</Text>
                  </View>
-                 <View style={{marginVertical:20,alignItems:"center"}}>
-                    <TouchableOpacity style={{ height: height * 0.05, width: width * 0.4, alignItems: "center", justifyContent: "center", backgroundColor: "green" }}
-                        onPress={() => {this.print()}}
-                    >
-                        <Text style={[styles.text, { color: "#fff" }]}>Print</Text>
-                    </TouchableOpacity>
-                 </View>
+            
              </View>
         )
     }

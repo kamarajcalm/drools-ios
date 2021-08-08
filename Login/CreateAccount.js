@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { View, Text, Dimensions, TouchableOpacity, StyleSheet, FlatList, Image, Alert, AsyncStorage, TextInput, ScrollView} from 'react-native';
+import { View, Text, Dimensions, TouchableOpacity, StyleSheet, FlatList, Image, Alert, AsyncStorage, TextInput, ScrollView, KeyboardAvoidingView, Platform, ActivityIndicator} from 'react-native';
 const { height, width } = Dimensions.get('window')
 import settings from '../AppSettings'
 import { connect } from 'react-redux';
@@ -133,7 +133,12 @@ componentDidMount(){
                     </View>
                 </View>
             </LinearGradient>
+            <KeyboardAvoidingView
+            
+            behavior={Platform.OS=="ios"?"padding":"height"}
+            >
 
+       
             <ScrollView>
                         <View style={{paddingHorizontal:20,marginTop:20}}>
                             <View>
@@ -209,7 +214,6 @@ componentDidMount(){
                     </View>
                     <TextInput
                         secureTextEntry={true}
-
                         value={this.state.password}
                         style={{ height: 35, width: width * 0.8, backgroundColor: "#fafafa", marginTop: 10, paddingLeft: 5 }}
                         selectionColor={themeColor}
@@ -230,13 +234,18 @@ componentDidMount(){
                     />
                 </View>
                 <View style={{margin: 20,alignItems:"center",justifyContent:"center" }}>
-                        <TouchableOpacity style={{height:height*0.05,width:width*0.4,alignItems:"center",justifyContent:"center",backgroundColor:primaryColor}}
+                        {!this.state.creating?<TouchableOpacity style={{height:height*0.05,width:width*0.4,alignItems:"center",justifyContent:"center",backgroundColor:primaryColor}}
                           onPress={()=>{this.createAccount()}}
                         >
                              <Text style={[styles.text,{color:"#fff"}]}>Create Account</Text>
-                        </TouchableOpacity>
+                        </TouchableOpacity>:
+                        <View style={{height:height*0.05,width:width*0.4,alignItems:"center",justifyContent:"center",backgroundColor:primaryColor}}>
+                              <ActivityIndicator color={"#fff"} size={"large"}/>  
+                            </View>
+                        }
                </View>
             </ScrollView>
+            </KeyboardAvoidingView>
       </View>
     );
   }

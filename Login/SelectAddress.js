@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { View, Text, Dimensions, TouchableOpacity, StyleSheet, FlatList, Image, Alert, AsyncStorage, TextInput, ScrollView, ActivityIndicator } from 'react-native';
+import { View, Text, Dimensions, TouchableOpacity, StyleSheet, FlatList, Image, Alert, AsyncStorage, TextInput, ScrollView, ActivityIndicator, Platform } from 'react-native';
 const { height, width } = Dimensions.get('window')
 import settings from '../AppSettings'
 import { connect } from 'react-redux';
@@ -152,14 +152,14 @@ export default class SelectAddress extends Component {
             >
                 <FontAwesome5 name="map-marker" size={40} color={primaryColor} />
             </View>
-            <View style={{ position: "absolute", right: 20, bottom: height * 0.3 }}>
+           {Platform.OS=="android"&&<View style={{ position: "absolute", right: 20, bottom: height * 0.3 }}>
                 <TouchableOpacity
                     style={[styles.roundWithShadow]}
                     onPress={() => { this.getLocation() }}
                 >
                     <MaterialIcons name="my-location" size={24} color="black" />
                 </TouchableOpacity>
-            </View>
+            </View>}
             <View style={{ position: "absolute", left: 20, top: 30 }}>
                 <TouchableOpacity
                     style={[styles.roundWithShadow]}

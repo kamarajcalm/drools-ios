@@ -19,7 +19,6 @@ import { FontAwesome, MaterialCommunityIcons, MaterialIcons, SimpleLineIcons, En
 import NormalOrders from './NormalOrders';
 import TakeAway from './TakeAway';
 import CreateOnline from './CreateOnline';
-import { BluetoothManager, BluetoothEscposPrinter, BluetoothTscPrinter, } from 'react-native-bluetooth-escpos-printer';
 import OnlineOrders from './OnlineOrders';
 import History from './History';
 import MonthPicker from 'react-native-month-year-picker';
@@ -107,29 +106,7 @@ const Month = ["Janauary","Feb"]
                  return null;
          }
      };
-     enableBluetooth =async()=>{
-         BluetoothManager.enableBluetooth().then(async(r) => {
-             const address = await AsyncStorage.getItem("bluetoothAddress")
-             const name = await AsyncStorage.getItem("bluetoothName")
-             if(address==null){
-                 alert("please connect bluetooth Printer")
-                 return 
-             }
-             BluetoothManager.connect(address) // the device address scanned.
-                 .then((s) => {
-                     alert("Printer connected")
-                     this.props.bluetoothStatus(true)
-                  
-                 }, (e) => {
-                     this.setState({
-                         loading: false
-                     })
-                     alert(e);
-                 })
-         }, (err) => {
-             alert(err)
-         });
-     }
+
      toggleSwitch =()=>{
          this.props.setOnePlusOne(!this.props.oneplusOne)
     
@@ -145,8 +122,7 @@ const Month = ["Janauary","Feb"]
          }
      }
      componentDidMount(){
-         console.log(this.props)
-         this.enableBluetooth()
+   
          this.getMonthlyIncome()
      }
      onValueChange = (event, newDate)=>{

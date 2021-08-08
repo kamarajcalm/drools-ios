@@ -8,7 +8,6 @@ import StatisticsView from '../screens/StatisticsView';
 import ProfilePage from '../screens/ProfilePage';
 import Tables from '../screens/Tables';
 import ExpenseScreen from '../screens/ExpenseScreen';
-import BlueToothDevices from '../screens/BlueToothDevices';
 import { TransitionSpecs, CardStyleInterpolators } from '@react-navigation/stack';
 import Discounts from '../screens/Discounts';
 import OtherExpenses from '../screens/OtherExpenses';
@@ -38,7 +37,6 @@ export default class ProfileStack extends Component {
                 <Stack.Screen name="Tables" component={Tables} options={{ headerShown: false }} />
                 <Stack.Screen name="ExpenseScreen" component={ExpenseScreen} options={{ headerShown: false }} />
                 <Stack.Screen name="OtherExpenses" component={OtherExpenses} options={{ headerShown: false }} />
-                <Stack.Screen name="BlueToothDevices" component={BlueToothDevices} options={{ headerShown: false }} />
                 <Stack.Screen name="Discounts" component={Discounts} options={{ headerShown: false }} />
             </Stack.Navigator>
         );
