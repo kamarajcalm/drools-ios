@@ -422,7 +422,7 @@ class ViewOrders extends Component {
                         <View>
                             <Text style={[styles.text,{color:"#000",fontSize:22}]}>Order Status :</Text>
                         </View>
-                        <View style={{ marginTop: 10 ,width:width*0.7,height:this.state.open?height*0.1:height*0.08}}>
+                        <View style={{ marginTop: 10 ,width:width*0.7,height:this.state.open?height*0.2:height*0.08}}>
                             <DropDownPicker
                                 style={{ height: height * 0.05 }}
                                 containerStyle={{ height: height * 0.05 }}
@@ -438,7 +438,7 @@ class ViewOrders extends Component {
                         <View>
                             <Text style={[styles.text, { color: "#000", fontSize: 22 }]}>Payment Status :</Text>
                         </View>
-                        <View style={{ marginTop: 10, width: width * 0.7, height: this.state.open2 ? height * 0.1 : height * 0.08}}>
+                        <View style={{ marginTop: 10, width: width * 0.7, height: this.state.open2 ? height * 0.2 : height * 0.08}}>
                             <DropDownPicker
                                 style={{ height: height * 0.05 }}
                                 containerStyle={{ height: height * 0.05 }}
