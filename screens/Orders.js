@@ -236,18 +236,9 @@ const Month = ["Janauary","Feb"]
                             <Text style={[styles.text,{color:"#fff",fontSize:20}]}>{months[this.state.month-1]},{this.state.year}</Text>
                         </TouchableOpacity>
                    </View>
-                   {
-                       this.state.show&&
-                        <MonthPicker
-                            onChange={this.onValueChange}
-                            value={new Date()}
-                            minimumDate={new Date(2019,5)}
-                            maximumDate={new Date()}
-                          
-                        />
-                   }
+             
                    <FlatList 
-                     contentContainerStyle={{paddingBottom:90}}
+                     contentContainerStyle={{paddingBottom:100}}
                      refreshing={this.state.refreshing}
                      onRefresh = {()=>{this.refresh()}}
                      ListFooterComponent={this.footer()}
@@ -274,7 +265,16 @@ const Month = ["Janauary","Feb"]
                      }}
                    />
               </View>}
-        
+              {
+                       this.state.show&&
+                        <MonthPicker
+                            onChange={this.onValueChange}
+                            value={new Date()}
+                            minimumDate={new Date(2019,5)}
+                            maximumDate={new Date()}
+                          
+                        />
+                   }
             </View>
        
         );
