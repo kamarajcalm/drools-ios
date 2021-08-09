@@ -348,7 +348,10 @@ const screenHeight = Dimensions.get('screen').height
                                                 })
                                             }
                                         </View>
-                                    
+                                           {item.takeaway&&<View style={{flexDirection:"row",marginTop:5}}>
+                                            <Text style={[styles.text, { color: "#fff" }]}>TakeAway : {item.cartpk}</Text>
+                                          
+                                        </View>}
                                     </View>
                            
                                </TouchableOpacity>

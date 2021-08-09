@@ -67,7 +67,6 @@ export default class InventoryOrders extends Component {
         <View style={{ flex: 0.3, alignItems: "center", justifyContent: "center"}}>
           <Text style={[styles.text]}>Status</Text>
         </View>
-       
       </View>
     )
   }
