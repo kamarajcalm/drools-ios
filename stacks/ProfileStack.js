@@ -8,9 +8,12 @@ import StatisticsView from '../screens/StatisticsView';
 import ProfilePage from '../screens/ProfilePage';
 import Tables from '../screens/Tables';
 import ExpenseScreen from '../screens/ExpenseScreen';
+import BlueToothDevices from '../screens/BlueToothDevices';
 import { TransitionSpecs, CardStyleInterpolators } from '@react-navigation/stack';
 import Discounts from '../screens/Discounts';
 import OtherExpenses from '../screens/OtherExpenses';
+import PasswordScreen from '../customerScreens/PasswordScreen';
+import ProfileInfo from '../screens/ProfileInfo';
 const Stack = createStackNavigator();
 export default class ProfileStack extends Component {
     constructor(props) {
@@ -37,7 +40,10 @@ export default class ProfileStack extends Component {
                 <Stack.Screen name="Tables" component={Tables} options={{ headerShown: false }} />
                 <Stack.Screen name="ExpenseScreen" component={ExpenseScreen} options={{ headerShown: false }} />
                 <Stack.Screen name="OtherExpenses" component={OtherExpenses} options={{ headerShown: false }} />
+                <Stack.Screen name="BlueToothDevices" component={BlueToothDevices} options={{ headerShown: false }} />
                 <Stack.Screen name="Discounts" component={Discounts} options={{ headerShown: false }} />
+                <Stack.Screen name="PasswordScreen" component={PasswordScreen} options={{ headerShown: false }} />
+                <Stack.Screen name="ProfileInfo" component={ProfileInfo} options={{ headerShown: false }} />
             </Stack.Navigator>
         );
     }
