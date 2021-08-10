@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { View, Text, Dimensions, TouchableOpacity, StyleSheet, FlatList, Image, TextInput, ScrollView, ActivityIndicator, Alert } from 'react-native';
+import { View, Text, Dimensions, TouchableOpacity, StyleSheet, FlatList, Image, TextInput, ScrollView, ActivityIndicator, Alert, TouchableWithoutFeedback } from 'react-native';
 const { height, width } = Dimensions.get('window')
 import settings from '../AppSettings'
 import { connect } from 'react-redux';
@@ -120,13 +120,15 @@ class OtherExpenses extends Component {
     }
     modal =()=>{
         return(
-        <Modal 
+        <Modal
+          useNativeDriverForBackdrop={true} 
           isVisible={this.state.modal}
           deviceHeight={screenHeight}
           statusBarTranslucent={true}
           onBackdropPress={()=>{this.setState({modal:false})}}
         >
-          <View style={{flex:1,alignItems:"center",justifyContent:"center"}}>
+            
+          <TouchableWithoutFeedback style={{flex:1,alignItems:"center",justifyContent:"center"}}>
                     <View style={{ height: height * 0.5, width: width * 0.8, borderRadius: 10, backgroundColor: "#fff", marginTop: 20}}>
 
           
@@ -193,7 +195,7 @@ class OtherExpenses extends Component {
                </ScrollView>
                     </View>
            
-          </View>    
+          </TouchableWithoutFeedback>    
         </Modal>
         )
     }

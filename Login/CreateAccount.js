@@ -139,7 +139,9 @@ componentDidMount(){
             >
 
        
-            <ScrollView>
+            <ScrollView
+             contentContainerStyle={{paddingBottom:150}}
+            >
                         <View style={{paddingHorizontal:20,marginTop:20}}>
                             <View>
                                     <Text style={[styles.text, { color: "#fff", fontSize: 22 }]}>First Name : </Text>

@@ -197,7 +197,7 @@ class ViewCategories extends Component {
                                 <TouchableOpacity style={{ flex: 0.25, alignItems: "center", justifyContent: "center" }}
                                  onPress ={()=>{this.createAlert(item,index)}}
                                 >
-                                  <Text style={[styles.text,{color:this.validateColor(item),textDecorationLine:"underlinecd "}]}>{item.invalid?"Make Valid":"Make Invalid"}</Text>
+                                  <Text style={[styles.text,{color:this.validateColor(item),textDecorationLine:"underline"}]}>{item.invalid?"Make Valid":"Make Invalid"}</Text>
                                 </TouchableOpacity>
                             </View>
                         )
