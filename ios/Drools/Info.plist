@@ -33,6 +33,11 @@
 	<string>$(CURRENT_PROJECT_VERSION)</string>
 	<key>GMSApiKey</key>
 	<string>AIzaSyCOSH383cU0Ywb6J1JZA_vlRq6Y6I6DgtE</string>
+	<key>LSApplicationQueriesSchemes</key>
+	<array>
+		<string>tel</string>
+		<string>telprompt</string>
+	</array>
 	<key>LSRequiresIPhoneOS</key>
 	<true/>
 	<key>NSAppTransportSecurity</key>
@@ -77,10 +82,5 @@
 	<string>Light</string>
 	<key>UIViewControllerBasedStatusBarAppearance</key>
 	<false/>
-	<key>LSApplicationQueriesSchemes</key> 
-<array> 
-  <string>tel</string> 
-  <string>telprompt</string> 
-</array>
 </dict>
 </plist>

@@ -281,12 +281,12 @@ class AddMenuItems extends Component {
                                 return (
                                     <TouchableOpacity
                                         key={index}
-                                        style={{ padding: 15, justifyContent: "center", width: width * 0.8, borderColor: "#333", borderBottomWidth: 0.3, height: 35 }}
+                                        style={{ padding: 10, justifyContent: "center", width: width * 0.8, borderColor: "#333", borderBottomWidth: 0.3, height:40}}
                                         onPress={() => {
                                             this.setState({ itemName: i.title, selectedDish: i, dishes:[]})
                                         }}
                                     >
-                                        <Text style={[styles.text, { color: themeColor, }]}>{i.title}</Text>
+                                        <Text style={[styles.text,]}>{i.title}</Text>
                                     </TouchableOpacity>
                                 )
                             })
