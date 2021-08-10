@@ -294,7 +294,7 @@ class AddCombo extends Component {
                             return (
                                 <TouchableOpacity
                                     key={index}
-                                    style={{ padding: 15, justifyContent: "center", width: width * 0.8, borderColor: "#333", borderBottomWidth: 0.3, height: 35 }}
+                                    style={{ padding: 10, justifyContent: "center", width: width * 0.8, borderColor: "#333", borderBottomWidth: 0.3, height: 35 }}
                                     onPress={() => {
                                         this.setState({ defaultName: i.title, defaultDish: i, combos: [] })
                                     }}
@@ -351,7 +351,7 @@ class AddCombo extends Component {
                                 return (
                                     <TouchableOpacity
                                         key={index}
-                                        style={{ padding: 15, justifyContent: "center", width: width * 0.8, borderColor: "#333", borderBottomWidth: 0.3, height: 35 }}
+                                        style={{ padding: 10, justifyContent: "center", width: width * 0.8, borderColor: "#333", borderBottomWidth: 0.3, height: 35 }}
                                         onPress={() => {
                                             this.setState({ choiceName: i.title, selectedDish: i, combos2: [] })
                                         }}
