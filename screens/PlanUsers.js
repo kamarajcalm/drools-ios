@@ -230,9 +230,9 @@ class PlanUsers extends Component {
                                         </View>
                                         <View style={{ flex: 0.3, alignItems: "center", justifyContent: "space-around", }}>
                                            <View style={{flexDirection:"row",alignItems:"center",justifyContent:"space-around"}}>
-                                                    <Switch
-                                                trackColor={{ false: "#767577", true: "#81b0ff" }}
-                                                thumbColor={item.active ? "#f5dd4b" : "#f4f3f4"}
+                                                       <Switch
+                                                trackColor={{ false: "#767577", true: "#000" }}
+                                                thumbColor={item.active ? primaryColor : "#f4f3f4"}
                                                 ios_backgroundColor="#3e3e3e"
                                                 onValueChange={() => { this.createAlert(item,index)}}
                                                 value={item.active}
