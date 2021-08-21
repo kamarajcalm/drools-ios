@@ -43,6 +43,7 @@ export default class ProfileStack extends Component {
                 <Stack.Screen name="Discounts" component={Discounts} options={{ headerShown: false }} />
                 <Stack.Screen name="PasswordScreen" component={PasswordScreen} options={{ headerShown: false }} />
                 <Stack.Screen name="ProfileInfo" component={ProfileInfo} options={{ headerShown: false }} />
+                <Stack.Screen name="MonthlyIncome" component={MonthlyIncome} options={{ headerShown: false }} />
             </Stack.Navigator>
         );
     }
