@@ -116,6 +116,7 @@ const Month = ["Janauary","Feb"]
      }
      getBills = async()=>{
        let api = `${url}/api/drools/bulkBill/?date=${this.state.fromDate}`
+       console.log(api)
        const data = await HttpsClient.get(api)
        if(data.type=="success"){
            this.setState({incomes:data.data.data,data:data.data})
