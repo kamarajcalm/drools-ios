@@ -47,7 +47,7 @@ class History extends Component {
         this.setState({show:false})
     };
     handleConfirm = (date) => {
-        this.setState({ today: momemt(date).format("YYYY-MM-DD"), orders:[]},()=>{
+        this.setState({ today: momemt(date).format("YYYY-MM-DD"), orders:[],offset:0,loadmore:true},()=>{
             this.getOrders()
         })
         this.hideDatePicker();
@@ -171,7 +171,7 @@ class History extends Component {
                     </TouchableOpacity>
                 </LinearGradient>
                 <FlatList
-                    bounces={false}
+                   
                     ListFooterComponent={this.footer()}
                     refreshing={this.state.refreshing}
                     onRefresh={()=>{this.setState({orders:[],offset:0,loadmore:true},()=>{
