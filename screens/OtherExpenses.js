@@ -218,13 +218,14 @@ class OtherExpenses extends Component {
         )
     }
     deleteItem = async(item,index)=>{
+        console.log(item)
         let api = `${url}/api/drools/otherexpenses/${item.id}/`
+        console.log(api)
         let del = await HttpsClient.delete(api)
+        console.log(del)
         if(del.type =="success"){
             this.showSimpleMessage("deleted successfuly","green","success")
-            let duplicate = this.state.otherExpenses
-            duplicate.splice(index,1)
-            this.setState({ otherExpenses:duplicate})
+             this.getExtraExpenses()
         }else{
             this.showSimpleMessage("Try Again", "red", "danger")
         }
