@@ -14,7 +14,11 @@ import Discounts from '../screens/Discounts';
 import OtherExpenses from '../screens/OtherExpenses';
 import PasswordScreen from '../customerScreens/PasswordScreen';
 import ProfileInfo from '../screens/ProfileInfo';
+<<<<<<< HEAD
 import DailyIncomeSheet from '../screens/DailyIncomeSheet';
+=======
+import MonthlyIncome from '../screens/MonthlyIncome';
+>>>>>>> cfc3bd09871feb8b23e932068b22387f34f7ef38
 const Stack = createStackNavigator();
 export default class ProfileStack extends Component {
     constructor(props) {
