@@ -42,11 +42,9 @@ export default class ProfileStack extends Component {
                 <Stack.Screen name="Tables" component={Tables} options={{ headerShown: false }} />
                 <Stack.Screen name="ExpenseScreen" component={ExpenseScreen} options={{ headerShown: false }} />
                 <Stack.Screen name="OtherExpenses" component={OtherExpenses} options={{ headerShown: false }} />
-                <Stack.Screen name="BlueToothDevices" component={BlueToothDevices} options={{ headerShown: false }} />
                 <Stack.Screen name="Discounts" component={Discounts} options={{ headerShown: false }} />
                 <Stack.Screen name="PasswordScreen" component={PasswordScreen} options={{ headerShown: false }} />
                 <Stack.Screen name="ProfileInfo" component={ProfileInfo} options={{ headerShown: false }} />
-             
                 <Stack.Screen name="MonthlyIncome" component={MonthlyIncome} options={{ headerShown: false }} />
                 <Stack.Screen name="DailyIncomeSheet" component={DailyIncomeSheet} options={{ headerShown: false }} />
                 <Stack.Screen name="DailyExpenses" component={DailyExpenses} options={{ headerShown: false }} />
