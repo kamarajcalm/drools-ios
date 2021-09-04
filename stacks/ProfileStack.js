@@ -8,7 +8,6 @@ import StatisticsView from '../screens/StatisticsView';
 import ProfilePage from '../screens/ProfilePage';
 import Tables from '../screens/Tables';
 import ExpenseScreen from '../screens/ExpenseScreen';
-import BlueToothDevices from '../screens/BlueToothDevices';
 import { TransitionSpecs, CardStyleInterpolators } from '@react-navigation/stack';
 import Discounts from '../screens/Discounts';
 import OtherExpenses from '../screens/OtherExpenses';
