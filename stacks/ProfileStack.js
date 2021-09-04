@@ -14,7 +14,6 @@ import Discounts from '../screens/Discounts';
 import OtherExpenses from '../screens/OtherExpenses';
 import PasswordScreen from '../customerScreens/PasswordScreen';
 import ProfileInfo from '../screens/ProfileInfo';
-import PrintBills from '../screens/PrintBills';
 import MonthlyIncome from '../screens/MonthlyIncome';
 import DailyIncomeSheet from '../screens/DailyIncomeSheet';
 import DailyExpenses from '../screens/DailyExpenses';
@@ -48,7 +47,7 @@ export default class ProfileStack extends Component {
                 <Stack.Screen name="Discounts" component={Discounts} options={{ headerShown: false }} />
                 <Stack.Screen name="PasswordScreen" component={PasswordScreen} options={{ headerShown: false }} />
                 <Stack.Screen name="ProfileInfo" component={ProfileInfo} options={{ headerShown: false }} />
-                <Stack.Screen name="PrintBills" component={PrintBills} options={{ headerShown: false }} />
+             
                 <Stack.Screen name="MonthlyIncome" component={MonthlyIncome} options={{ headerShown: false }} />
                 <Stack.Screen name="DailyIncomeSheet" component={DailyIncomeSheet} options={{ headerShown: false }} />
                 <Stack.Screen name="DailyExpenses" component={DailyExpenses} options={{ headerShown: false }} />
