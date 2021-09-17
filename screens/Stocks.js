@@ -129,7 +129,7 @@ export default class Stocks extends Component {
               this.setState({creating:false})
             this.getItems()
             this.setState({modal:false})
-            this.setState({ title: "", description: "", minimum_quantity:""})
+            this.setState({ itemName: "", description: "", minQty:""})
             this.showSimpleMessage("Edited SuccessFully", "#00A300", "success")
         }else{
               this.setState({creating:false})
