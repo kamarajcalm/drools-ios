@@ -149,11 +149,13 @@ class ViewOrders2 extends Component {
         if(this.state.paymentmode==null){
             return this.showSimpleMessage("Please select Payment Mode","orange","info")
         }
-        let api = `${url}/api/drools/cart/${this.state.item.id}/`
+        let api = `${url}/api/drools/editOrder/`
         let sendData ={
-                payment_mode:this.state.paymentmode
+                payment_mode:this.state.paymentmode,
+                cart:this.state.item.id
         }
-        let patch = await HttpsClient.patch(api,sendData)
+        let patch = await HttpsClient.post(api,sendData)
+        console.log(patch)
         if(patch.type=="success"){
             this.setState({modal:false})
             this.getOrders()

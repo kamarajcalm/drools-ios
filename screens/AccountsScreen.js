@@ -70,7 +70,8 @@ class AccountsScreen extends Component {
           
          
            }
-           console.log(total)
+           console.log(dataa,"ppppp")
+        //    console.log(total)
            this.setState({
              data:dataa,
              totalPrice:data.data.total_price,
@@ -272,7 +273,7 @@ class AccountsScreen extends Component {
                                             </View>
                                             <View style={{width:width*0.3,alignItems:"center",justifyContent:"center",borderColor: "gray", borderRightWidth: 1,}}>
                                                   <View>
-                                                  <Text style={[styles.text,{color:this.getColor(item)}]}>{this.getTotalPrice(item)}</Text>
+                                                  <Text style={[styles.text,{color:this.getColor(item)}]}>{item.type=="Cash"&&this.getTotalPrice(item)}</Text>
                                               </View>
                                               <View>
                                                    <Text style={[styles.text,{color:"#fff"}]}>{item.type=="Cash"&& (item.title)}</Text>
