@@ -110,16 +110,12 @@ class ViewOrders extends Component {
     }
     completeOrder =async()=>{
         this.setState({creating:true})
-            if(this.state.paymentmode==null){
-                 this.setState({creating:false})
-             return this.showSimpleMessage("Please Select payment mode","orange","info")
-         }
         let api = `${url}/api/drools/createOrder/`
         let sendData ={
             status:this.state.ordervalue,
             payment_status:this.state.paymentvalue,
             cart_id:this.state.item.id,
-            discount:this.state.discount,
+            discount:Number(this.state.discount),
             payment_mode:this.state.paymentmode
         }
         if (this.props.oneplusOne){
