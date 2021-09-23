@@ -124,7 +124,9 @@ class ViewOrders2 extends Component {
         let sendData = {
             status: this.state.ordervalue,
             payment_status: this.state.paymentvalue,
-            cart_id: this.state.item.id
+            cart_id: this.state.item.id,
+            discount:Number(this.state.discount),
+            payment_mode:this.state.paymentmode
         }
         let post = await HttpsClient.post(api, sendData)
         console.log(post)
