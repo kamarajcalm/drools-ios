@@ -478,7 +478,7 @@ class ViewOrders2 extends Component {
                                 </View>
                                 <View style={{ flex: 0.2, alignItems: "center", justifyContent: "center" }}>
                                     <View>
-                                        <Text style={[styles.text, { color: primaryColor, fontSize: 22 }]}>₹ {(item.total_price) - Math.ceil((item.total_price * 5) / 100)}</Text>
+                                        <Text style={[styles.text, { color: primaryColor, fontSize: 22 }]}>₹ {parseFloat((item.item_price * 100/105)*( item.quantity)).toFixed(3)}</Text>
                                     </View>
                                 </View>
                             </View>
