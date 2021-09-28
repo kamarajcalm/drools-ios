@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { View, Text, Dimensions, TouchableOpacity, StyleSheet, FlatList, Image ,TextInput, ScrollView,Switch, ActivityIndicator} from 'react-native';
+import { View, Text, Dimensions, TouchableOpacity, StyleSheet, FlatList, Image ,TextInput, ScrollView,Switch, ActivityIndicator, Linking} from 'react-native';
 const { height, width } = Dimensions.get('window')
 import settings from '../AppSettings'
 import { connect } from 'react-redux';
@@ -197,6 +197,25 @@ class ViewOrders extends Component {
             this.showSimpleMessage("Try Again", "green", "success")
         }
     }
+            callNumber = phone => {
+  console.log('callNumber ----> ', phone);
+  let phoneNumber = phone;
+  if (Platform.OS !== 'android') {
+    phoneNumber = `telprompt:${phone}`;
+  }
+  else  {
+    phoneNumber = `tel:${phone}`;
+  }
+  Linking.canOpenURL(phoneNumber)
+  .then(supported => {
+    if (!supported) {
+      Alert.alert('Phone number is not available');
+    } else {
+      return Linking.openURL(phoneNumber);
+    }
+  })
+  .catch(err => console.log(err));
+};
     footer =()=>{
         return(
             <View style={{marginVertical:10}}>
@@ -302,9 +321,16 @@ class ViewOrders extends Component {
                             <View>
                                 <Text style={[styles.text, { color: primaryColor, fontSize: 22 }]}> {this.state.item.customer_name}</Text>
                             </View>
-                            <View>
-                                <Text style={[styles.text, { color: primaryColor, fontSize: 22 }]}> {this.state.item.customer_mobile}</Text>
-                            </View>
+                             <TouchableOpacity 
+                             onPress={()=>{
+                                 this.callNumber(this.state.item.customer_mobile)
+                             }}
+                            >
+                                 <View>
+                                              <Text style={[styles.text, { color: primaryColor, fontSize: 22 }]}> {this.state.item.customer_mobile}</Text>
+                                 </View>
+                      
+                            </TouchableOpacity>
                             
                   
                         </View>
